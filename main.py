@@ -49,14 +49,26 @@ def main():
     parser.add_argument('text', type=str, help='Text to be encoded or decoded')
     parser.add_argument('shift', type=int, help='Shift value for the Caesar Cipher')
 
-    args = parser.parse_args()
+    try:
+        args = parser.parse_args()
 
-    if args.mode == 'encode':
-        result = caesar_cipher(args.text, args.shift, mode='encode')
-        print(f"Encoded text: {result}")
-    elif args.mode == 'decode':
-        result = caesar_cipher(args.text, args.shift, mode='decode')
-        print(f"Decoded text: {result}")
+        if not 0 <= args.shift < 26:
+            raise ValueError("Shift value must be between 0 and 25")
+
+        if args.mode == 'encode':
+            result = caesar_cipher(args.text, args.shift, mode='encode')
+            print(f"Encoded text: {result}")
+        elif args.mode == 'decode':
+            result = caesar_cipher(args.text, args.shift, mode='decode')
+            print(f"Decoded text: {result}")
+
+    except ValueError as ve:
+        print(f"Error: {ve}")
+    except KeyboardInterrupt:
+        print("\nOperation interrupted. Exiting gracefully...")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
 
 if __name__ == "__main__":
     main()
+
