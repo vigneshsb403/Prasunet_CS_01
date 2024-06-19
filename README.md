@@ -1,4 +1,4 @@
-# Prasunet_CS_01 - Caesar Cipher
+# Prasunet CS 01 - Caesar Cipher
 
 <p align="center">
 <a href="https://twitter.com/sbvignesh"><img src="https://img.shields.io/twitter/follow/sbvignesh.svg?logo=x"></a>
@@ -26,7 +26,7 @@ git clone https://github.com/vigneshsb403/Prasunet_CS_01.git
 ```
 Change directory
 ```
-cd Prasunet_CS_01.git
+cd Prasunet_CS_01
 ```
 
 # Usage
